@@ -168,7 +168,7 @@ bool corectness(MYSQL* connection, std::string value) {
 			We check failure variable every loop and if it occurs we handle it later.
 			*/
 			if (value == "Garmory") {
-				if (std::atoi(row[0]) % 4 == 0) {
+				if (std::atoi(row[0]) % 4 == 0 && std::atoi(row[0]) % 7 != 0) {
 					failure = false;
 				}
 				else {
@@ -180,7 +180,7 @@ bool corectness(MYSQL* connection, std::string value) {
 			Same logic for others conditions.
 			*/
 			else if (value == "Praca") {
-				if (std::atoi(row[0]) % 7 == 0) {
+				if (std::atoi(row[0]) % 7 == 0 && std::atoi(row[0]) % 4 != 0) {
 					failure = false;
 				}
 				else {
